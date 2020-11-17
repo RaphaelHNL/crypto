@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e38100;
+  color: white;
+}
+
+mat-form-field {
+  width: 100%;
+}
+mat-card {
+  margin: 20px;
+  width: 30%;
+  justify-self: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  mat-card {
+    margin: 20px;
+    width: 80%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  mat-card {
+    margin: 20px;
+    width: 80%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  mat-card {
+    margin: 20px;
+    width: 70%;
+  }
+}

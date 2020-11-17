@@ -1,0 +1,90 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e38100;
+  color: white;
+}
+
+.container {
+  display: flex;
+  padding-left: 0;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card {
+  margin: 15px;
+  width: 30%;
+}
+
+.firstCard {
+  margin-left: 25%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  mat-card {
+    margin: 15px;
+    width: 80%;
+  }
+
+  .secondCard {
+    margin: 20px;
+    width: 80%;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  mat-card {
+    margin: 15px;
+    width: 80%;
+  }
+
+  .secondCard {
+    margin: 20px;
+    width: 80%;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .firstCard {
+    margin: 15px;
+    width: 95%;
+  }
+
+  .secondCard {
+    margin: 15px;
+    width: 95%;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}

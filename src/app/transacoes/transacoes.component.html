@@ -1,0 +1,100 @@
+<mat-toolbar>
+  <span>Transações</span>
+
+  <div class="dropdown">
+    <button class="dropbtn">{{nome}}</button>
+    <div class="dropdown-content">
+      <a class="logout" (click)="logout()">Sair</a>
+    </div>
+  </div>
+
+</mat-toolbar>
+<div class="container">
+  <mat-card class="firstCard">
+    <mat-card-content>
+      <h2>SALDO DISPONÍVEL</h2>
+      <span class="saldo">{{saldo | currency:'BRL':true }}</span>
+
+      <a [routerLink]="['/compravenda']">
+        <mat-icon>swap_horiz</mat-icon> Comprar e Vender
+      </a>
+
+      <a [routerLink]="['/depositar']">
+        <mat-icon>publish</mat-icon> Depositar
+      </a>
+      <a [routerLink]="['/saque']">
+        <mat-icon>get_app</mat-icon> Saque
+      </a>
+      <a [routerLink]="['/change']">
+        <mat-icon>swap_horiz</mat-icon> Trocar criptomoedas
+      </a>
+      <a [routerLink]="['/extrato']">
+        <mat-icon>list_alt</mat-icon> Ver Extrato
+      </a>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="secondCard">
+    <mat-card-content>
+      <h2>Saldo BTC</h2>
+      <div class="btcs">
+        <a>
+          ETH: {{eth | number: '1.2-5'}} <mat-icon svgIcon="ethIcon"></mat-icon>
+        </a>
+        <a>
+          BTC: {{btc | number: '1.2-5'}} <mat-icon svgIcon="btcIcon"></mat-icon>
+        </a>
+        <a>
+          LTC: {{ltc | number: '1.2-5'}} <mat-icon svgIcon="ltcIcon"></mat-icon>
+        </a>
+        <a>
+          PAXG: {{paxg | number: '1.2-5'}} <mat-icon svgIcon="paxgIcon"></mat-icon>
+        </a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div>
+
+  <mat-card class="cardMoedas">
+    <mat-card-title>
+      <h2>Valor atual das moedas</h2>
+    </mat-card-title>
+    <mat-card-content>
+      <div class="containerMoedas">
+        <div class="moedaContainer">
+          <a>Moeda</a>
+          <span>
+            <mat-icon svgIcon="ethIcon"></mat-icon> {{ethCoin}}
+          </span>
+          <span>
+            <mat-icon svgIcon="btcIcon"></mat-icon> {{btcCoinName}}
+          </span>
+          <span>
+            <mat-icon svgIcon="ltcIcon"></mat-icon> {{ltcCoin}}
+          </span>
+          <span>
+            <mat-icon svgIcon="paxgIcon"></mat-icon> {{paxCoin}}
+          </span>
+        </div>
+        <div class="compraContainer">
+          <a>Compra</a>
+          <span>{{ethCompra | currency:'BRL' }}</span>
+          <span>{{btcCompra | currency:'BRL'}}</span>
+          <span>{{ltcCompra | currency:'BRL'}}</span>
+          <span>{{paxCompra | currency:'BRL'}}</span>
+        </div>
+        <div class="vendaContainer">
+          <a>Venda</a>
+          <span>{{ethVenda | currency:'BRL'}}</span>
+          <span>{{btcVenda | currency:'BRL'}}</span>
+          <span>{{ltcVenda | currency:'BRL'}}</span>
+          <span>{{paxVenda | currency:'BRL'}}</span>
+        </div>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
