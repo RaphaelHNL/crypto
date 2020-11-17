@@ -15,23 +15,20 @@ export class LoginComponent implements OnInit {
   })
   constructor(private dadosService: DadosService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  login(){
+  login() {
     this.dadosService.login(this.meuFormGroup.value)
-    .subscribe((logar: any) => {
-      console.log(logar);
-      this.meuFormGroup.reset();
-      window.setInterval(() => {
+      .subscribe((logar: any) => {
+        console.log(logar);
+        this.meuFormGroup.reset();
         localStorage.setItem(`token`, logar.token);
         this.router.navigateByUrl('/transacoes');
-    }, 1000);
-    },
-    error => {
-      alert('Email ou senha inválido.')
-    }
-    )
+      },
+        error => {
+          alert('Email ou senha inválido.')
+        }
+      )
   }
 
 }

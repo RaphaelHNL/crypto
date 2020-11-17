@@ -26,7 +26,7 @@
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button (click)="login()" mat-button>Logar</button>
+      <button (click)="login()" mat-button [disabled]="!meuFormGroup.valid">Logar</button>
       <button mat-button [routerLink]="'/cadastro'">Cadastrar</button>
     </mat-card-actions>
   </mat-card>
