@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
         console.log(logar);
         this.meuFormGroup.reset();
         localStorage.setItem(`token`, logar.token);
-        this.router.navigateByUrl('/transacoes');
+        setTimeout(() => this.router.navigateByUrl('/transacoes'), 300);
       },
         error => {
           alert('Email ou senha inválido.')
