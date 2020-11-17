@@ -41,20 +41,20 @@ export interface MoedasTwo {
 
 
 
-const httpOptions = {  
-   headers: new HttpHeaders({     
-  'Content-Type':  'application/json',
-   'Accept': 'application/json'
-  }) 
-  };
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  })
+};
 
-  const httpDados = {  
-    headers: new HttpHeaders({     
-   'Content-Type':  'application/json',
+const httpDados = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
     'Accept': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
-   }) 
-   };
+  })
+};
 
 const urlBase = 'https://cn1yi4xbe7.execute-api.sa-east-1.amazonaws.com/api';
 
@@ -65,42 +65,84 @@ export class DadosService {
 
   constructor(private http: HttpClient) { }
 
-  login(logar: Login){
+  login(logar: Login) {
     return this.http.post<Login>(`${urlBase}/login`, logar, httpOptions)
   }
 
-  cadastro(cadastro: Cadastro){
+  cadastro(cadastro: Cadastro) {
     return this.http.post<Cadastro>(`${urlBase}/register`, cadastro, httpOptions)
   }
 
-  dados(){
-    return this.http.get(`${urlBase}/cliente/dados`,  httpDados)
+  dados() {
+    return this.http.get(`${urlBase}/cliente/dados`, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      })
+    })
   }
 
-  valorMoedaTwo(){
-    return this.http.get(`${urlBase}/moedas/valores`, httpDados)
+  valorMoedaTwo() {
+    return this.http.get(`${urlBase}/moedas/valores`, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      })
+    })
   }
 
-  depositar(deposito: Deposito){
-    return this.http.post<Deposito>(`${urlBase}/ordens/deposito`, deposito,  httpDados)
+  depositar(deposito: Deposito) {
+    return this.http.post<Deposito>(`${urlBase}/ordens/deposito`, deposito, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      })
+    })
   }
 
-  sacar(deposito: Deposito){
-    return this.http.post<Deposito>(`${urlBase}/ordens/saque`, deposito,  httpDados)
+  sacar(deposito: Deposito) {
+    return this.http.post<Deposito>(`${urlBase}/ordens/saque`, deposito, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      })
+    })
   }
 
-  comprar(comprar: any){
-    return this.http.post<Compra>(`${urlBase}/ordens/transferencia`, comprar,  httpDados)
+  comprar(comprar: any) {
+    return this.http.post<Compra>(`${urlBase}/ordens/transferencia`, comprar, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      })
+    })
   }
 
-  valorMoeda(moedas: Moedas){
-    return this.http.post<Moedas>(`${urlBase}/moedas/valores`, moedas,  httpDados)
+  valorMoeda(moedas: Moedas) {
+    return this.http.post<Moedas>(`${urlBase}/moedas/valores`, moedas, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      })
+    })
   }
 
 
 
-  extrato(){
-    return this.http.get(`${urlBase}/ordens/extrato`, httpDados)
+  extrato() {
+    return this.http.get(`${urlBase}/ordens/extrato`, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      })
+    })
   }
 
 }
