@@ -23,8 +23,10 @@ export class LoginComponent implements OnInit {
     .subscribe((logar: any) => {
       console.log(logar);
       this.meuFormGroup.reset();
-      localStorage.setItem(`token`, logar.token);
-      this.router.navigateByUrl('/transacoes');
+      window.setInterval(() => {
+        localStorage.setItem(`token`, logar.token);
+        this.router.navigateByUrl('/transacoes');
+    }, 1000);
     },
     error => {
       alert('Email ou senha inválido.')
