@@ -15,7 +15,9 @@ export class LoginComponent implements OnInit {
   })
   constructor(private dadosService: DadosService, private router: Router) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    localStorage.removeItem('token');
+  }
 
   login() {
     this.dadosService.login(this.meuFormGroup.value)
