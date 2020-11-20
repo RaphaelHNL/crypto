@@ -31,19 +31,19 @@
 
         <mat-form-field>
           <mat-label>CPF</mat-label>
-          <input mask="00000000000" formControlName="CPF" matInput placeholder="CPF" />
+          <input minlength="11" mask="00000000000" formControlName="CPF" matInput placeholder="CPF" />
           <mat-icon matSuffix>assignment</mat-icon>
         </mat-form-field>
         <div class="rgContainer">
           <mat-form-field class="rgInput">
             <mat-label>RG</mat-label>
-            <input mask="00000000" formControlName="RG" matInput placeholder="RG" />
+            <input minlength="8" mask="00000000" formControlName="RG" matInput placeholder="RG" />
 
           </mat-form-field>
 
           <mat-form-field class="digitoInput">
             <mat-label>Digito</mat-label>
-            <input mask="A{1}" formControlName="Digito" matInput placeholder="Digito" />
+            <input minlength="1" mask="A{1}" formControlName="Digito" matInput placeholder="Digito" />
             <mat-icon matSuffix>assignment</mat-icon>
           </mat-form-field>
         </div>
