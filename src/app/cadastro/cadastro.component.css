@@ -20,6 +20,19 @@ mat-card {
   justify-self: center;
 }
 
+.rgContainer {
+  display: flex;
+}
+
+.rgInput {
+  width: 70%;
+}
+
+.digitoInput {
+  width: 30%;
+  margin-left: 2px;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 500px) {
   .container {

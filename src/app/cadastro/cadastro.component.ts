@@ -8,6 +8,9 @@ import { DadosService } from '../dados.service';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
+  rgMask = [/[0-9]{8}/];
+  digitoMask = [/[A-z0-9]{1}/];
+
 
   meuFormGroup = new FormGroup({
     Nome: new FormControl('', Validators.required),

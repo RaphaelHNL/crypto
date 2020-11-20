@@ -16,17 +16,17 @@
 
         <mat-form-field>
           <mat-label>Conta bancaria</mat-label>
-          <input matInput placeholder="Conta" type="number" required>
+          <input mask="A{6}" matInput placeholder="Conta" required>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Agência</mat-label>
-          <input matInput placeholder="agencia" required>
+          <input mask="00000" matInput placeholder="agência" required>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>CPF</mat-label>
-          <input matInput placeholder="CPF" type="number" name="cpf" required>
+          <input mask="00000000000" matInput placeholder="CPF" type="number" required>
         </mat-form-field>
       </form>
     </mat-card-content>

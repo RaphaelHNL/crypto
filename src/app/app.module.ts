@@ -32,6 +32,11 @@ import { DepositarComponent } from './transacoes/depositar/depositar.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 import { CategoriaPipe } from './categoria.pipe';
+import { NgxMaskModule, IConfig  } from 'ngx-mask'
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 registerLocaleData(localePt);
 
@@ -67,6 +72,8 @@ registerLocaleData(localePt);
     HttpClientModule,
     MatTableModule,
     MatMenuModule,
+    NgxMaskModule.forRoot(maskConfig),
+    
     
     
   ],

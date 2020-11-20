@@ -31,22 +31,22 @@
 
         <mat-form-field>
           <mat-label>CPF</mat-label>
-          <input formControlName="CPF" matInput placeholder="CPF" />
+          <input mask="00000000000" formControlName="CPF" matInput placeholder="CPF" />
           <mat-icon matSuffix>assignment</mat-icon>
         </mat-form-field>
+        <div class="rgContainer">
+          <mat-form-field class="rgInput">
+            <mat-label>RG</mat-label>
+            <input mask="00000000" formControlName="RG" matInput placeholder="RG" />
 
-        <mat-form-field>
-          <mat-label>RG</mat-label>
-          <input formControlName="RG" matInput placeholder="RG" />
-          <mat-icon matSuffix>assignment</mat-icon>
-        </mat-form-field>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Digito</mat-label>
-          <input formControlName="Digito" matInput placeholder="Digito" />
-          <mat-icon matSuffix>assignment</mat-icon>
-        </mat-form-field>
-
+          <mat-form-field class="digitoInput">
+            <mat-label>Digito</mat-label>
+            <input mask="A{1}" formControlName="Digito" matInput placeholder="Digito" />
+            <mat-icon matSuffix>assignment</mat-icon>
+          </mat-form-field>
+        </div>
 
         <mat-form-field>
           <mat-label>Sexo</mat-label>
@@ -65,7 +65,7 @@
 
         <mat-form-field>
           <mat-label>Password</mat-label>
-          <input formControlName="Senha" matInput placeholder="Password" />
+          <input type="password" formControlName="Senha" matInput placeholder="Password" />
           <mat-icon matSuffix>vpn_key</mat-icon>
         </mat-form-field>
 
