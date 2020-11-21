@@ -16,22 +16,22 @@
 
         <mat-form-field>
           <mat-label>Conta bancaria</mat-label>
-          <input mask="A{6}" matInput placeholder="Conta" required>
+          <input formControlName="ContaBancaria" minlength="6" mask="A{6}" matInput placeholder="Conta" required>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Agência</mat-label>
-          <input mask="00000" matInput placeholder="agência" required>
+          <input formControlName="Agencia" minlength="5" mask="00000" matInput placeholder="agência" required>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>CPF</mat-label>
-          <input mask="00000000000" matInput placeholder="CPF" type="number" required>
+          <input formControlName="Cpf" minlength="11" mask="00000000000" matInput placeholder="CPF" type="number" required>
         </mat-form-field>
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button (click)="sacar()" mat-button color="primary">Sacar</button>
+      <button [disabled]="!meuFormGroup.valid" (click)="sacar()" mat-button color="primary">Sacar</button>
     </mat-card-actions>
   </mat-card>
 

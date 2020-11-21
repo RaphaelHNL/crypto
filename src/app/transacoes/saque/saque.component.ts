@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { formControlBinding } from '@angular/forms/src/directives/ng_model';
 import { DadosService } from 'src/app/dados.service';
 
 @Component({
@@ -10,7 +11,10 @@ import { DadosService } from 'src/app/dados.service';
 export class SaqueComponent implements OnInit {
   meuFormGroup = new FormGroup({
     Valor: new FormControl('', Validators.required),
-  })
+    ContaBancaria: new FormControl('', Validators.required),
+    Agencia: new FormControl('', Validators.required),
+    Cpf: new FormControl('', Validators.required),
+    })
 
 
   constructor(private dadosService: DadosService) { }
@@ -23,8 +27,8 @@ export class SaqueComponent implements OnInit {
 
 
   sacar(){
-    this.meuFormGroup.value.Valor = this.meuFormGroup.value.Valor.toString().replace('.', '').replace(',', '.');
-    this.dadosService.sacar(this.meuFormGroup.value)
+    const Valor = this.meuFormGroup.value.Valor.toString().replace('.', '').replace(',', '.');
+    this.dadosService.sacar({Valor})
     .subscribe(deposito => {
       console.log(deposito);
       this.meuFormGroup.reset();
